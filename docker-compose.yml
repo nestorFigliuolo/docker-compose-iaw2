@@ -1,0 +1,17 @@
+services:
+  node:
+    build:
+      context: ./node
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+  flask:
+    build:
+      context: ./flask
+      dockerfile: Dockerfile
+    environment:
+      - FLASK_APP=server
+  go-server:
+    build:
+      context: ./goServer
+      dockerfile: Dockerfile
